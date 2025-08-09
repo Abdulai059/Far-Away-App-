@@ -23,11 +23,13 @@ export function App() {
       )
     );
   }
-  
-  function handleClearList() {
-    setItems([]);
-  }
 
+  function handleClearList() {
+    const confirmed = window.confirm("Are you sure you want delete all items?");
+
+
+    if (confirmed)setItems([]);
+  }
 
   return (
     <div className="app">
