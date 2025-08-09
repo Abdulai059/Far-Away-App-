@@ -22,7 +22,8 @@ This project was created to strengthen my understanding of **how React component
 
 ## 📷 Screenshot
 
-*(Add a screenshot of your app here)*
+![Far Away App Screenshot](public/far-awy-app.png)
+
 
 ---
 
