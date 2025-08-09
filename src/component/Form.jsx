@@ -1,16 +1,25 @@
 import { useState } from "react";
+import Item from "./Item";
 
-function Form() {
-  const [description, setDecription] = useState("");
-  const [quantity, setQuantity] = useState(5); 
+function Form({onAddItems}) {
+  const [description, setDescription] = useState("");
+  const [quantity, setQuantity] = useState(1);
 
-  function handelSubmit(e) {
-    e.preventDefaut();
-    console.log(e);
+  function handleSubmit(e) {
+    e.preventDefault();
+    handleSubmit;
+    if (!description) return;
+
+    const newItem = { description, quantity, packed: false, id: Date.now() };
+
+    onAddItems (newItem);
+
+    setDescription("");
+    setQuantity(1);
   }
 
   return (
-    <form className="add-form" onSubmit={handelSubmit}>
+    <form className="add-form" onSubmit={handleSubmit}>
       <h3>what do you need for your 😍 trip</h3>
 
       <select
@@ -29,7 +38,7 @@ function Form() {
         className="no-spinner"
         placeholder="Item..."
         value={description}
-        onChange={(e) => setDecription(e.target.value)}
+        onChange={(e) => setDescription(e.target.value)}
       />
       <button>Add</button>
     </form>
